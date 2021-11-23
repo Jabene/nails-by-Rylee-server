@@ -35,5 +35,18 @@ server.post(`/users`, (request, response) => {
   }
 })
 
+server.post('/login', (request, response) => {
+  const credentials = request.body
+  try {
+    db('users')
+      .select()
+      .where('email', credentials.email)
+      .where('password', credentials.password)
+      .then(user => response.json(user))
+  } catch(error) {
+    response.json(error)
+  }
+})
+
 
 module.exports = server;
