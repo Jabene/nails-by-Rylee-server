@@ -21,14 +21,18 @@ server.set('port', process.env.PORT || 5000)
 
 server.post(`/users`, (request, response) => {
   const user = request.body
-  db('users')
-    .insert({
-      first_name: user.firstName,
-      last_name: user.lastName,
-      email: user.email,
-      password: user.password
-    })
-    .then(response.json(`Thank you for creating an account ${user.firstName}`))
+  try {
+    db('users')
+      .insert({
+        first_name: user.firstName,
+        last_name: user.lastName,
+        email: user.email,
+        password: user.password
+      })
+      .then(response.json(`Thank you for creating an account ${user.firstName}`))
+  } catch(error) {
+    response.json(error)
+  }
 })
 
 
