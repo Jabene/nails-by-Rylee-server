@@ -19,12 +19,17 @@ server.locals.title = 'nails-by-rylee-server'
 
 server.set('port', process.env.PORT || 5000)
 
-server.get(`/turd`, (req, res) => {
-  console.log('hi')
+server.post(`/users`, (request, response) => {
+  const user = request.body
+  db('users')
+    .insert({
+      first_name: user.firstName,
+      last_name: user.lastName,
+      email: user.email,
+      password: user.password
+    })
+    .then(response.json(`Thank you for creating an account ${user.firstName}`))
 })
 
-server.listen(server.get('port'), () => {
-  console.log(`${server.locals.title} is running on ${server.get('port')}.`);
-})
 
 module.exports = server;
