@@ -31,7 +31,7 @@ server.post(`/users`, (request, response) => {
       }, '*')
       .then(newUser => response.json(newUser))
       .catch(error => response.json(error))
-  } 
+  }
 })
 
 server.post('/login', (request, response) => {
@@ -42,8 +42,7 @@ server.post('/login', (request, response) => {
       .where('email', credentials.email)
       .where('password', credentials.password)
       .then(user => response.json(user))
-  } catch(error) {
-    response.json(error)
+      .catch(error => response.json(error))
   }
 })
 
