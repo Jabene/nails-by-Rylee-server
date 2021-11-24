@@ -29,7 +29,8 @@ server.post(`/users`, (request, response) => {
         email: user.email,
         password: user.password
       })
-      .then(response.json(`Thank you for creating an account ${user.firstName}`))
+      .returning(*)
+      .then(newUser => response.json(newUser))
   } catch(error) {
     response.json(error)
   }
