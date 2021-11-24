@@ -30,9 +30,8 @@ server.post(`/users`, (request, response) => {
         password: user.password
       }, '*')
       .then(newUser => response.json(newUser))
-  } catch(error) {
-    response.json('error')
-  }
+      .catch(error => response.json(error))
+  } 
 })
 
 server.post('/login', (request, response) => {
