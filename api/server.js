@@ -1,5 +1,10 @@
 const express = require('express');
 const cors = require('cors');
+const corsOptions = {
+  origin: '*',
+  credentials: true,
+  optionSuccessStatus:200
+}
 const helmet = require('helmet');
 
 const knex = require('knex')
@@ -11,7 +16,7 @@ const db = knex(configuration)
 
 const server = express();
 
-server.use(cors());
+server.use(cors(corsOptions));
 server.use(helmet());
 server.use(express.json());
 
