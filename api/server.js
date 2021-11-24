@@ -28,11 +28,10 @@ server.post(`/users`, (request, response) => {
         last_name: user.lastName,
         email: user.email,
         password: user.password
-      })
-      .returning(*)
+      }, '*')
       .then(newUser => response.json(newUser))
   } catch(error) {
-    response.json(error)
+    response.json('error')
   }
 })
 
