@@ -8,7 +8,7 @@ module.exports = {
       filename: './api/database.db3'
     },
     migrations: {
-      direcotry: './api/migrations'
+      directory: './api/migrations'
     },
     seeds: {
       directory: './api/seeds'
