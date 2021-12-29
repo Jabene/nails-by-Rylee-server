@@ -35,7 +35,8 @@ This is the backend server for the Nails By Rylee app.
 ![Postman][Postman-img]
 
 #### Languages and Frameworks
-![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![ExpressJS](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+![KnexJS](https://user-images.githubusercontent.com/79823098/140978950-21ceb46e-55dd-40e7-b395-65a4afccfbbf.png)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)
 ![SQlite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
